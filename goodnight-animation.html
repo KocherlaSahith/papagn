@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Goodnight Animation</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
@@ -163,6 +163,16 @@
             to { text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(255,107,157,0.8); }
         }
         
+        @keyframes backgroundShift {
+            0%, 100% { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 25%, #fecfef 75%, #ff9a9e 100%); }
+            50% { background: linear-gradient(135deg, #fecfef 0%, #ff9a9e 25%, #ff9a9e 75%, #fecfef 100%); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-20px) rotate(5deg); }
@@ -199,12 +209,93 @@
             50% { transform: scale(1.1); }
         }
         
+        /* Mobile Optimization */
         @media (max-width: 768px) {
             .message {
                 font-size: 2rem;
             }
             .name {
                 font-size: 2.5rem;
+            }
+            .heart {
+                font-size: 1.5rem;
+            }
+            .star {
+                font-size: 0.8rem;
+            }
+            .floating-heart {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .message {
+                font-size: 1.5rem;
+            }
+            .name {
+                font-size: 2rem;
+                min-width: 80px;
+            }
+            .heart {
+                font-size: 1.2rem;
+            }
+            .star {
+                font-size: 0.6rem;
+            }
+            .floating-heart {
+                font-size: 1rem;
+            }
+            body {
+                animation-duration: 12s; /* Slower background animation for mobile */
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .message {
+                font-size: 1.2rem;
+            }
+            .name {
+                font-size: 1.8rem;
+                min-width: 60px;
+            }
+            .heart {
+                font-size: 1rem;
+            }
+            .star {
+                font-size: 0.5rem;
+            }
+            .floating-heart {
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Reduce animation complexity on mobile for better performance */
+        @media (max-width: 768px) {
+            .heart {
+                animation-duration: 4s, 3s; /* Slower animations */
+            }
+            .floating-heart {
+                animation-duration: 6s linear infinite; /* Slower floating hearts */
+            }
+            .star {
+                animation-duration: 3s ease-in-out infinite; /* Slower twinkling */
+            }
+        }
+        
+        /* Prevent text selection on mobile for better user experience */
+        @media (max-width: 768px) {
+            .message, .name {
+                user-select: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+            }
+        }
+        
+        /* Optimize for touch devices */
+        @media (hover: none) {
+            .name {
+                cursor: default;
             }
         }
     </style>
