@@ -52,6 +52,22 @@
             transform: scale(1.05);
         }
         
+        .paw-prints {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .paw {
+            font-size: 1.5rem;
+            animation: pawFloat 2s ease-in-out infinite;
+        }
+        
+        .paw:nth-child(1) { animation-delay: 0s; }
+        .paw:nth-child(2) { animation-delay: 0.5s; }
+        .paw:nth-child(3) { animation-delay: 1s; }
+        
         .message {
             font-size: 3rem;
             font-weight: 700;
@@ -237,6 +253,11 @@
             75% { transform: translateY(-10px) rotate(-2deg); }
         }
         
+        @keyframes pawFloat {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-5px) scale(1.2); opacity: 1; }
+        }
+        
         /* Mobile Optimization */
         @media (max-width: 768px) {
             .message {
@@ -366,7 +387,13 @@
 
 <hr>
 
-<h5 class="message">Swwweeeeeeettesstttttt dreamssssss🍓</h5>
+<h5 class="message">Meowww sweet dreamssssss 🐾</h5>
+        
+        <div class="paw-prints">
+            <span class="paw">🐾</span>
+            <span class="paw">🐾</span>
+            <span class="paw">🐾</span>
+        </div>
     
     <script>
         const names = ['Vaishnavi', 'Vaishnavi', 'Vaishnaviii', 'Vaishnaviiii', 'Vaishnaviiiii', 'Vaishnaviiiiii'];
