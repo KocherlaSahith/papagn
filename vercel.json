@@ -10,10 +10,6 @@
     {
       "src": "/(.*)",
       "dest": "/goodnight-animation.html"
-    },
-    {
-      "src": "/cat.jpg",
-      "dest": "/cat.jpg"
     }
   ]
 }
