@@ -30,6 +30,28 @@
             z-index: 10;
         }
         
+        .cat-image-container {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .cat-image {
+            max-width: 300px;
+            max-height: 300px;
+            width: auto;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: catFloat 3s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+        
+        .cat-image:hover {
+            transform: scale(1.05);
+        }
+        
         .message {
             font-size: 3rem;
             font-weight: 700;
@@ -209,6 +231,12 @@
             50% { transform: scale(1.1); }
         }
         
+        @keyframes catFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(2deg); }
+            75% { transform: translateY(-10px) rotate(-2deg); }
+        }
+        
         /* Mobile Optimization */
         @media (max-width: 768px) {
             .message {
@@ -225,6 +253,10 @@
             }
             .floating-heart {
                 font-size: 1.2rem;
+            }
+            .cat-image {
+                max-width: 250px;
+                max-height: 250px;
             }
         }
         
@@ -324,10 +356,13 @@
     <div class="floating-hearts" id="floatingHearts"></div>
     
     <div class="container">
-    <div class="message">
-        goodnight <span class="name" id="nameDisplay">papa</span>
+        <div class="message">
+            goodnight <span class="name" id="nameDisplay">papa</span>
+        </div>
+        <div class="cat-image-container">
+            <img src="cat.jpg" alt="Cute Mad Cat" class="cat-image">
+        </div>
     </div>
-</div>
 
 <hr>
 
