@@ -273,6 +273,20 @@
     <div class="card-sub" style="margin-bottom:0; font-size: clamp(13px,2.5vw,17px); opacity:0.7;">Wishing you the softest, warmest night 🌙</div>
   </div>
 </div>
+<div>
+  <hr>
+  <div style="display: flex; justify-content: center; align-items: flex-start; position: fixed; inset: 0; pointer-events: none; z-index: 11;">
+    <img src="https://media.tenor.com/O64aKH8IkAkAAAAe/angry-chihuahua-chi.png" alt="Angry Chihuahua" style="margin-top: 340px; width: 170px; filter: drop-shadow(0 0 8px rgba(255,100,150,0.18)); animation: chihuahuaWag 3s ease-in-out infinite;">
+  </div>
+  <style>
+  @keyframes chihuahuaWag {
+    0%, 100% { transform: rotate(-6deg) scale(1); }
+    20% { transform: rotate(7deg) scale(1.04); }
+    50% { transform: rotate(-8deg) scale(1.02); }
+    80% { transform: rotate(6deg) scale(1.03); }
+  }
+  </style>">
+</div>
 
 <!-- Music button -->
 <button class="music-btn" id="musicBtn" title="Toggle ambient music">🎵</button>
@@ -348,7 +362,7 @@ for (let i = 0; i < 25; i++) {
 for (let i = 0; i < 20; i++) {
   const h = document.createElement('div');
   h.className = 'heart';
-  h.textContent = pick(['💕','💗','💖','💓','🌸','💝','🩷']);
+  h.textContent = pick(['💕','💗','💖','💓','🌸','💝','🐈']);
   h.style.cssText = `
     left:${rnd(0,100)}%; top:${rnd(20,90)}%;
     font-size:${rnd(12,22)}px;
