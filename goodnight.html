@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Goodnight Superwoman 🌙</title>
+<title>goodnight papa ✨</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -17,336 +17,453 @@
 }
 
 body{
+
     height:100vh;
     overflow:hidden;
-    font-family:'Poppins',sans-serif;
+
+    font-family:'Outfit',sans-serif;
+
     background:
-    radial-gradient(circle at top left,#ff2e88 0%,transparent 20%),
-    radial-gradient(circle at bottom right,#6f2cff 0%,transparent 25%),
-    linear-gradient(135deg,#050505,#0d0d12,#14091d,#050505);
+    linear-gradient(
+        180deg,
+        #ffd7ec 0%,
+        #ffc2df 20%,
+        #ffb3dc 40%,
+        #ff9fd3 60%,
+        #ff89c8 100%
+    );
+
+    position:relative;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    position:relative;
 }
 
-/* BACKGROUND GLOW */
+/* CLOUDS */
 
-.glow{
+.cloud{
+
     position:absolute;
+
+    background:rgba(255,255,255,.45);
+
+    border-radius:100px;
+
+    filter:blur(2px);
+
+    animation:cloudMove linear infinite;
+}
+
+.cloud::before,
+.cloud::after{
+    content:'';
+    position:absolute;
+    background:inherit;
     border-radius:50%;
-    filter:blur(120px);
-    opacity:.18;
-    animation: floatGlow 10s ease-in-out infinite;
 }
 
-.glow1{
-    width:400px;
-    height:400px;
-    background:#ff2e88;
-    top:-150px;
-    left:-120px;
+.cloud1{
+    width:180px;
+    height:60px;
+    top:12%;
+    left:-220px;
+    animation-duration:35s;
 }
 
-.glow2{
-    width:350px;
-    height:350px;
-    background:#7b3cff;
-    bottom:-120px;
-    right:-120px;
+.cloud1::before{
+    width:70px;
+    height:70px;
+    left:20px;
+    top:-25px;
 }
 
-@keyframes floatGlow{
-    0%,100%{
-        transform:translateY(0px);
+.cloud1::after{
+    width:90px;
+    height:90px;
+    right:20px;
+    top:-35px;
+}
+
+.cloud2{
+    width:140px;
+    height:50px;
+    bottom:18%;
+    left:-180px;
+    animation-duration:45s;
+    opacity:.5;
+}
+
+.cloud2::before{
+    width:60px;
+    height:60px;
+    left:18px;
+    top:-20px;
+}
+
+.cloud2::after{
+    width:70px;
+    height:70px;
+    right:15px;
+    top:-25px;
+}
+
+@keyframes cloudMove{
+
+    from{
+        transform:translateX(0);
     }
-    50%{
-        transform:translateY(-20px);
+
+    to{
+        transform:translateX(140vw);
     }
 }
 
 /* STARS */
 
-.stars{
-    position:absolute;
-    inset:0;
-    overflow:hidden;
-}
-
 .star{
     position:absolute;
-    width:2px;
-    height:2px;
-    border-radius:50%;
-    background:white;
-    opacity:.6;
-    animation: twinkle 4s infinite ease-in-out;
+    color:white;
+    opacity:.8;
+    animation:starBlink 3s infinite ease-in-out;
 }
 
-@keyframes twinkle{
+@keyframes starBlink{
+
     0%,100%{
         opacity:.2;
+        transform:scale(1);
     }
+
     50%{
         opacity:1;
+        transform:scale(1.4);
     }
 }
 
-/* FLOATING ICONS */
+/* MAIN WRAP */
 
-.floaters{
-    position:absolute;
-    inset:0;
-    overflow:hidden;
-}
-
-.float{
-    position:absolute;
-    bottom:-80px;
-    opacity:.18;
-    animation: floatUp linear infinite;
-    filter:drop-shadow(0 0 12px rgba(255,255,255,.25));
-}
-
-@keyframes floatUp{
-
-    0%{
-        transform:
-        translateY(0)
-        rotate(0deg);
-        opacity:0;
-    }
-
-    10%{
-        opacity:.18;
-    }
-
-    100%{
-        transform:
-        translateY(-120vh)
-        rotate(180deg);
-        opacity:0;
-    }
-}
-
-/* MAIN CARD */
-
-.card{
-    width:min(92%,850px);
-    padding:70px 55px;
-    border-radius:36px;
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(255,255,255,.06),
-        rgba(255,255,255,.02)
-    );
-
-    border:1px solid rgba(255,255,255,.08);
-
-    backdrop-filter:blur(16px);
-
-    box-shadow:
-    0 20px 80px rgba(0,0,0,.55),
-    inset 0 0 30px rgba(255,255,255,.03);
-
+.wrapper{
     position:relative;
-    overflow:hidden;
-
     z-index:5;
 }
 
-/* SHINE */
+/* POLAROID */
 
-.card::before{
-    content:'';
-    position:absolute;
-    top:0;
-    left:-200%;
-    width:200%;
-    height:100%;
+.polaroid{
 
-    background:linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.05),
-        transparent
-    );
+    width:min(92vw,430px);
 
-    animation: shine 7s linear infinite;
+    background:white;
+
+    padding:22px 22px 145px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.18);
+
+    transform:rotate(-3deg);
+
+    animation:floatCard 5s ease-in-out infinite;
+
+    position:relative;
+
+    overflow:visible;
 }
 
-@keyframes shine{
-    100%{
-        left:200%;
-    }
-}
+@keyframes floatCard{
 
-/* SUPER WOMAN TAG */
-
-.tag{
-    color:#ff4fa1;
-    font-size:14px;
-    font-weight:700;
-    letter-spacing:5px;
-    margin-bottom:25px;
-    text-transform:uppercase;
-}
-
-/* TITLE */
-
-.title{
-    font-size:clamp(55px,8vw,105px);
-    line-height:1;
-    font-weight:800;
-    color:white;
-
-    text-shadow:
-    0 0 18px rgba(255,255,255,.08),
-    0 0 40px rgba(255,79,161,.2);
-
-    animation: pulse 4s ease-in-out infinite;
-}
-
-@keyframes pulse{
     0%,100%{
-        transform:scale(1);
+        transform:
+        rotate(-3deg)
+        translateY(0px);
     }
+
     50%{
-        transform:scale(1.02);
+        transform:
+        rotate(-1deg)
+        translateY(-12px);
     }
 }
 
-.highlight{
-    background:linear-gradient(
-        90deg,
-        #ff4fa1,
-        #d08cff,
-        #ffffff
+/* PHOTO AREA */
+
+.photo{
+
+    height:470px;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    background:
+    linear-gradient(
+        180deg,
+        #6dc5ff 0%,
+        #98d7ff 30%,
+        #ffd4ea 100%
     );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-/* SUBTITLE */
-
-.subtitle{
-    margin-top:28px;
-    font-size:18px;
-    line-height:1.9;
-    color:rgba(255,255,255,.72);
-    max-width:650px;
-}
-
-/* DIVIDER */
-
-.line{
-    width:150px;
-    height:2px;
-    margin:35px 0;
-
-    background:linear-gradient(
-        to right,
-        #ff4fa1,
-        transparent
-    );
-}
-
-/* QUOTE */
-
-.quote{
-    font-size:22px;
-    font-weight:500;
-    color:white;
-    line-height:1.7;
-    max-width:700px;
-}
-
-/* FOOTER */
-
-.footer{
-    margin-top:45px;
-    display:flex;
-    align-items:center;
-    gap:14px;
-    color:rgba(255,255,255,.5);
-    font-size:14px;
-    letter-spacing:2px;
-    text-transform:uppercase;
 }
 
 /* MOON */
 
 .moon{
-    position:absolute;
-    top:45px;
-    right:45px;
 
-    width:85px;
-    height:85px;
+    position:absolute;
+
+    top:55px;
+    right:55px;
+
+    width:90px;
+    height:90px;
 
     border-radius:50%;
-    background:#fff4cf;
+
+    background:#fff7db;
 
     box-shadow:
-    0 0 40px rgba(255,255,255,.6),
-    0 0 90px rgba(255,255,255,.15);
+    0 0 30px rgba(255,255,255,.8);
 
-    animation: moonFloat 6s ease-in-out infinite;
 }
 
 .moon::after{
+
     content:'';
+
     position:absolute;
 
-    width:70px;
-    height:70px;
+    width:72px;
+    height:72px;
 
     border-radius:50%;
 
-    background:#0d0d12;
+    background:#98d7ff;
 
-    top:-5px;
-    left:16px;
+    top:-6px;
+    left:18px;
 }
 
-@keyframes moonFloat{
-    0%,100%{
-        transform:translateY(0px);
+/* HILLS */
+
+.hill1,
+.hill2,
+.hill3{
+
+    position:absolute;
+
+    border-radius:50% 50% 0 0;
+}
+
+.hill1{
+    width:520px;
+    height:180px;
+    background:#ff91c9;
+    bottom:-40px;
+    left:-60px;
+}
+
+.hill2{
+    width:420px;
+    height:150px;
+    background:#ff74ba;
+    bottom:-55px;
+    right:-120px;
+}
+
+.hill3{
+    width:360px;
+    height:110px;
+    background:#ff5aac;
+    bottom:-40px;
+    left:20px;
+}
+
+/* FLOATING HEARTS */
+
+.hearts{
+    position:absolute;
+    inset:0;
+}
+
+.heart{
+
+    position:absolute;
+
+    font-size:18px;
+
+    animation:heartFloat linear infinite;
+
+    opacity:.7;
+}
+
+@keyframes heartFloat{
+
+    0%{
+        transform:
+        translateY(0px)
+        scale(.8);
+        opacity:0;
     }
+
+    20%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:
+        translateY(-120px)
+        scale(1.2);
+        opacity:0;
+    }
+}
+
+/* TEXT */
+
+/* TEXT */
+
+.bottom{
+
+    position:absolute;
+
+    left:0;
+    right:0;
+
+    bottom:28px;
+
+    text-align:center;
+
+    z-index:20;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+.goodnight{
+
+    font-family:'Caveat',cursive;
+
+    font-size:58px;
+
+    color:#ff5ea9;
+
+    line-height:1.1;
+
+    display:block;
+
+    margin-bottom:2px;
+
+    text-shadow:
+    0 3px 10px rgba(255,94,169,.25);
+}
+
+.papa{
+
+    display:block;
+
+    font-size:68px;
+
+    font-weight:700;
+
+    color:#ff3f96;
+
+    line-height:1;
+
+    text-shadow:
+    0 4px 14px rgba(255,63,150,.25);
+}
+/* TAPE */
+
+.tape{
+
+    position:absolute;
+
+    width:130px;
+    height:32px;
+
+    background:
+    repeating-linear-gradient(
+        45deg,
+        rgba(255,255,255,.55),
+        rgba(255,255,255,.55) 10px,
+        rgba(255,255,255,.35) 10px,
+        rgba(255,255,255,.35) 20px
+    );
+
+    top:-14px;
+
+    border-radius:6px;
+
+    backdrop-filter:blur(2px);
+}
+
+.tape1{
+    left:30px;
+    transform:rotate(-12deg);
+}
+
+.tape2{
+    right:30px;
+    transform:rotate(12deg);
+}
+
+/* SPARKLES */
+
+.sparkle{
+
+    position:absolute;
+
+    color:white;
+
+    font-size:22px;
+
+    opacity:.85;
+
+    animation:sparkle 4s infinite ease-in-out;
+}
+
+@keyframes sparkle{
+
+    0%,100%{
+        transform:scale(1) rotate(0deg);
+    }
+
     50%{
-        transform:translateY(-10px);
+        transform:scale(1.4) rotate(20deg);
     }
 }
 
 /* MOBILE */
 
-@media(max-width:700px){
+@media(max-width:600px){
 
-    .card{
-        padding:55px 28px;
+    .photo{
+        height:390px;
     }
 
-    .quote{
-        font-size:18px;
+    .goodnight{
+        font-size:42px;
     }
 
-    .subtitle{
-        font-size:15px;
+    .papa{
+        font-size:58px;
     }
 
     .moon{
-        width:65px;
-        height:65px;
-        top:28px;
-        right:28px;
+        width:70px;
+        height:70px;
     }
 
     .moon::after{
-        width:54px;
-        height:54px;
+        width:55px;
+        height:55px;
     }
 }
 
@@ -355,88 +472,110 @@ body{
 
 <body>
 
-<div class="glow glow1"></div>
-<div class="glow glow2"></div>
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
 
-<div class="stars" id="stars"></div>
-<div class="floaters" id="floaters"></div>
+<div class="sparkle" style="top:12%; left:10%;">✨</div>
+<div class="sparkle" style="top:18%; right:14%; animation-delay:1s;">⭐</div>
+<div class="sparkle" style="bottom:20%; left:16%; animation-delay:2s;">✨</div>
 
-<div class="card">
+<script>
 
-    <div class="moon"></div>
+/* STARS */
 
-  
+for(let i=0;i<35;i++){
 
-    <div class="title">
-        Goodnight<br>
-        <span class="highlight">Superwoman</span> 🌙
-    </div>
-<h3 style="color: white;">and goodmorning since youre gonna see this tomorrow morning🤭</h3>
-  
+    const star =
+    document.createElement('div');
 
-    <div class="line"></div>
+    star.className = 'star';
 
+    star.innerHTML = '✦';
 
-    <div class="footer">
-        Strongest and prettiest🌕
+    star.style.left =
+    Math.random()*100 + 'vw';
+
+    star.style.top =
+    Math.random()*100 + 'vh';
+
+    star.style.fontSize =
+    Math.random()*10 + 10 + 'px';
+
+    star.style.animationDuration =
+    Math.random()*3 + 2 + 's';
+
+    document.body.appendChild(star);
+}
+
+</script>
+
+<div class="wrapper">
+
+    <div class="polaroid">
+
+        <div class="tape tape1"></div>
+        <div class="tape tape2"></div>
+
+        <div class="photo">
+
+            <div class="moon"></div>
+
+            <div class="hearts" id="hearts"></div>
+
+            <div class="hill1"></div>
+            <div class="hill2"></div>
+            <div class="hill3"></div>
+
+        </div>
+
+        <div class="bottom">
+
+            <div class="goodnight">
+                goodnight
+            </div>
+
+            <span class="papa">
+                papa 💖
+            </span>
+
+        </div>
+
     </div>
 
 </div>
 
 <script>
 
-/* STARS */
+/* FLOATING HEARTS */
 
-const stars = document.getElementById('stars');
+const hearts =
+document.getElementById('hearts');
 
-for(let i=0;i<90;i++){
+for(let i=0;i<14;i++){
 
-    const star = document.createElement('div');
+    const heart =
+    document.createElement('div');
 
-    star.classList.add('star');
+    heart.classList.add('heart');
 
-    star.style.left = Math.random()*100 + 'vw';
-    star.style.top = Math.random()*100 + 'vh';
+    heart.innerHTML = '💗';
 
-    star.style.animationDuration =
-    Math.random()*4 + 2 + 's';
+    heart.style.left =
+    Math.random()*100 + '%';
 
-    star.style.animationDelay =
+    heart.style.bottom =
+    Math.random()*40 + 'px';
+
+    heart.style.fontSize =
+    Math.random()*12 + 14 + 'px';
+
+    heart.style.animationDuration =
+    Math.random()*4 + 3 + 's';
+
+    heart.style.animationDelay =
     Math.random()*5 + 's';
 
-    stars.appendChild(star);
-}
-
-/* FLOATING ICONS */
-
-const icons = [
-'🖤','✨','🌙','⚡','🦋','👑'
-];
-
-const floaters = document.getElementById('floaters');
-
-for(let i=0;i<18;i++){
-
-    const floater = document.createElement('div');
-
-    floater.classList.add('float');
-
-    floater.innerHTML =
-    icons[Math.floor(Math.random()*icons.length)];
-
-    floater.style.left =
-    Math.random()*100 + 'vw';
-
-    floater.style.fontSize =
-    Math.random()*22 + 18 + 'px';
-
-    floater.style.animationDuration =
-    Math.random()*10 + 10 + 's';
-
-    floater.style.animationDelay =
-    Math.random()*8 + 's';
-
-    floaters.appendChild(floater);
+    hearts.appendChild(heart);
 }
 
 </script>
